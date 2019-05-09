@@ -1,0 +1,155 @@
+<!--pages/index/index.wxml-->
+
+  <view class="page__hd">
+<view class="page">
+ <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+    <block wx:for="{{movies}}" wx:key="swiperadd">
+      <swiper-item> 
+        <image src="{{item.url}}" class="slide-image" mode="aspectFill"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  </view>
+  </view><!--页头-->
+    
+    <view class="page__bd">
+          <!-- <view class="opr">
+              <view class="btn">
+                 <view>
+                     <image src="../images/zuixin.png" style="width:32px; height:29px"></image>
+                </view>
+                <view class="text">优享水果</view>
+               </view>
+               <view class="btn">
+                 <view>
+                    <image src="../images/zuire.png" style="width:36px; height:33px"></image>
+                   </view>
+                   <view class="text">夜宵烧烤</view>
+                   </view> 
+                </view> -->
+
+ 
+<!--导航栏-->
+ 
+<view class="swiper-tab">
+ 
+<view class="tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">今日</view>
+ 
+<view class="tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">明日</view>
+ 
+</view>
+ 
+ 
+<!--内容主体-->
+ 
+<swiper class="swiper-top" current="{{currentTab}}" duration="200" bindchange="swiperChange">
+ 
+<swiper-item>
+ 
+<view class="desc">
+ <view class="column">
+  <view class="title">午餐</view>
+  <view class="ddl">11:00 截止点餐</view>
+  <view><button class="weui-btn" type="warn" bindtap='goToNoonPage'>立即预订 </button></view>
+    </view>
+     <view class="images"> 
+ <view> <image class='sizeModal-img1' mode='aspectFill' src='{{noonsrc1}}'></image></view>
+ <view> <image class='sizeModal-img2' mode='aspectFill' src='{{noonsrc2}}'></image></view>
+     </view>
+       <view class="images"> 
+ <view> <image class='sizeModal-img3' mode='aspectFill' src='{{noonsrc3}}'></image></view>
+
+     </view>
+</view>
+
+<view class="desc">
+  <view class="column">
+  <view class="title">晚餐</view>
+  <view class="ddl">16:30 截止点餐</view>
+  <view> <button class="weui-btn" type="warn" bindtap='goToNightPage' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" >立即预订 </button></view>
+  </view>
+     <view class="images">  
+  <view><image class='sizeModal-img1' mode='aspectFill' src= "{{nightsrc1}}"></image> </view>
+    <view><image class='sizeModal-img2' mode='aspectFill' src= "{{nightsrc2}}"></image> </view>
+    </view>
+     <view class="images"> 
+ <view> <image class='sizeModal-img3' mode='aspectFill' src='{{nightsrc3}}'></image></view>
+
+     </view>
+</view>
+
+ <view class="desc">
+   <view class="column">
+     <view class="title">夜宵</view>
+     <view class="ddl">21:10 截止点餐</view>
+     <view> <button class="weui-btn" type="warn" bindtap='goToMidNightPage'>立即预订 </button></view>
+   </view>
+    <view class="images">  
+   <view><image class='sizeModal-img1' mode='aspectFill' src="{{midnightsrc1}}"></image></view>
+    <view><image class='sizeModal-img2' mode='aspectFill' src="{{midnightsrc2}}"></image></view>
+    </view>
+         <view class="images"> 
+ <view> <image class='sizeModal-img3' mode='aspectFill' src='{{midnightsrc3}}'></image></view>
+     </view>
+</view>
+</swiper-item>
+ 
+<swiper-item>
+
+<view class="desc">
+  <view class="column">
+    <view class="title">午餐</view>
+    <view class="ddl">11:00 截止点餐</view>
+    <view><button class="weui-btn" type="warn" bindtap='goToNoonPage'>立即预订 </button></view>
+  </view>
+  <view class="images">  
+    <view> <image class='sizeModal-img1' mode='aspectFill' src='{{noonsrc1}}'></image></view>
+    <view> <image class='sizeModal-img2' mode='aspectFill' src='{{noonsrc2}}'></image></view>
+  </view>   
+   <view class="images"> 
+ <view> <image class='sizeModal-img3' mode='aspectFill' src='{{nightsrc3}}'></image></view>
+     </view>
+</view>
+
+<view class="desc">
+  <view class="column">
+  <view class="title">晚餐</view>
+  <view class="ddl">16:30 截止点餐</view>
+  <view> <button class="weui-btn" type="warn" bindtap='goToNightPage'>立即预订 </button></view>
+  </view>
+    <view class="images">  
+  <view><image class='sizeModal-img1' mode='aspectFill' src= "{{nightsrc1}}"></image> </view>
+  <view><image class='sizeModal-img2' mode='aspectFill' src= "{{nightsrc2}}"></image> </view>
+  </view>
+       <view class="images"> 
+ <view> <image class='sizeModal-img3' mode='aspectFill' src='{{nightsrc3}}'></image></view>
+     </view>
+</view>
+ <view class="desc">
+   <view class="column">
+     <view class="title">夜宵</view>
+     <view class="ddl">21:10 截止点餐</view>
+     <view> <button class="weui-btn" type="warn" bindtap='goToMidNightPage'>立即预订 </button></view>
+   </view>
+   <view class="images">  
+   <view><image class='sizeModal-img1' mode='aspectFill' src="{{midnightsrc1}}"></image></view>
+    <view><image class='sizeModal-img2' mode='aspectFill' src="{{midnightsrc2}}"></image></view>
+  </view>
+       <view class="images"> 
+ <view> <image class='sizeModal-img3' mode='aspectFill' src='{{midnightsrc3}}'></image></view>
+     </view>
+</view>
+
+ 
+</swiper-item>
+ 
+</swiper>
+
+</view>
+
+
+ 
+
+<view class="weui-footer">
+  <view class="weui-footer__text"> 嘉食宿递 祝您用餐愉快！ </view> 
+</view><!--页脚-->  

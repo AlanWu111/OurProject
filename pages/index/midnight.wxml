@@ -1,0 +1,15 @@
+<!--pages/index/midnight.wxml-->
+ <view class="opr">
+              <view class="btn">
+                 <view>
+                     <image src="../images/zuixin.png" style="width:32px; height:29px"></image>
+                </view>
+                <view class="text">优享水果</view>
+               </view>
+               <view class="btn">
+                 <view>
+                    <image src="../images/zuire.png" style="width:36px; height:33px"></image>
+                   </view>
+                   <view class="text">夜宵烧烤</view>
+                   </view> 
+                </view>

@@ -1,0 +1,4 @@
+<!--pages/order/detail/detail.wxml-->
+  <view>
+    <button bindtap="newBtnDown">和后台交流</button>
+  </view>

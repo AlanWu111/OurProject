@@ -1,0 +1,65 @@
+{
+  "pages":[
+    "pages/login/login",
+    "pages/index/index",
+    "pages/order/order",
+    "pages/userinfo/userinfo",
+    "pages/index/noon",
+    "pages/index/night",
+    "pages/index/midnight",
+    "pages/list/list",
+    "pages/logs/logs",
+    "pages/order/balance/balance",
+    "pages/order/detail/detail",
+    "pages/address/add",
+    "pages/address/select",
+    "pages/address/list"
+
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#ff5801",
+    "navigationBarTitleText": "嘉食宿递",
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#272636",
+    "selectedColor": "#ff5801",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "list": [
+     {
+       "pagePath": "pages/index/index",
+       "iconPath": "pages/images/index.png",
+       "selectedIconPath": "pages/images/index-selected.png",
+       "color": "white",
+       "text": "首页"
+     },
+     {
+       "pagePath": "pages/order/order",
+       "iconPath": "pages/images/order.png",
+       "selectedIconPath": "pages/images/order-selected.png",
+       "color": "white",
+       "text": "订单"
+     },
+     {
+       "pagePath": "pages/userinfo/userinfo",
+       "iconPath": "pages/images/userinfo.png",
+       "selectedIconPath": "pages/images/userinfo-selected.png",
+       "color": "white",
+       "text": "个人信息"
+     }
+    ]
+  },
+  "networkTimeout": {
+    "request": 20000,
+    "connectSocket": 20000,
+    "uploadFile": 20000,
+    "downloadFile": 20000
+  },
+  "navigateToMiniProgramAppIdList": [
+      "wx959c8c1fb2d877b5"
+  ],
+  "debug":true
+}

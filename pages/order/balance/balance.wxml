@@ -1,0 +1,59 @@
+<!--pages/order/balance/balance.wxml-->
+<view>
+  <view class="weui-cells">
+   <view class="weui-cell weui-cell_access">
+    <view class='weui-cell__bd'>送餐时间</view>
+    <view class="activity-color">11:45-12:15</view>
+  </view>
+  </view>
+
+  <view class="weui-cells">
+    <view class="weui-cell weui-cell_access">
+      <view class="weui-cell__bd">支付方式</view>
+      <view class="">在线支付</view>
+    </view>
+</view>
+  <!-- 订单详情 -->
+  <view class='order-info'>
+    <view class='order-info-title'>订单详情</view>
+    <view class='cart-list-box' wx:for="{{cartList}}" wx:key="unique">
+      <view class='list-info'>
+        <view>{{item.name}}</view>
+        <view class='list-info-size'>{{item.detail}}</view>
+      </view>
+      <view style='width:50%;padding:10px;'>
+        <view style='float:right'>
+          <view style='color:#A3A3A3'>x {{item.number}}</view>
+          <view>¥ {{item.sum}}.00</view>
+        </view>
+      </view>
+    </view>
+    <view class='order-cut' wx:if="{{cutMonney!=0}}">
+      <label class='order-cut-dec'>减</label>
+      <label class='order-cut-note'>满20元立减3元</label>
+      <label class='order-cut-number activity-color'>-¥ 3.00</label>
+    </view>
+    <view class='order-sum'>
+      <label>总计 </label>
+      <label class='order-sum-number activity-color'>¥ {{sumMonney-cutMonney}}</label>
+    </view>
+  </view>
+
+<!-- 底部操作栏 -->
+  <view class="operate-bar">
+    <view class='gouwuche'>
+      <view style='padding:5px;display:flex'>
+        <i class="iconfont icon-gouwuchefill gouwuche-icon activity-color">
+          <span class="number-msg" wx:if="{{cartList.length!=0}}">{{cupNumber}}</span>
+        </i>
+        <view class='gouwuche-price' style='color:white;font-size:18px'>¥ {{sumMonney-cutMonney}}.00</view>
+      </view>
+    </view>
+    <view class="submit-btn activity-color-bg" bindtap='gopay'>
+      <view class="submit-btn-label color-white">去支付</view>
+    </view>
+  </view>
+
+</view>
+
+<payjs wx:if="{{ preparePay }}" params="{{ orderParams }}" bindsuccess="bindPaySuccess" bindfail="bindPayFail" bindcomplete="bindPayComplete" bind:dataChange="bindDataChange"/>
